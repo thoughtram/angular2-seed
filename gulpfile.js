@@ -69,6 +69,7 @@ var PATH = {
       './node_modules/reflect-metadata/Reflect.js',
       './node_modules/reflect-metadata/Reflect.js.map',
       './node_modules/systemjs/dist/system.src.js',
+      './node_modules/materialize-css/bin/materialize.css',
       APP_SRC + '/system.config.js',
       ANGULAR_BUNDLES + '/angular2.dev.js',
       ANGULAR_BUNDLES + '/router.dev.js',

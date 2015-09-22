@@ -12,14 +12,9 @@
         "sourceMap": true
     },
     "files": [
-        "./app/app.ts",
-        "./app/components/about/about.ts",
-        "./app/components/about/about_spec.ts",
-        "./app/components/home/home.ts",
-        "./app/components/home/home_spec.ts",
+        "./app/contacts-app.ts",
         "./app/init.ts",
-        "./app/services/NameList.ts",
-        "./app/services/NameList_spec.ts",
+        "./app/models/contact.ts",
         "./app/typings/_custom.d.ts",
         "./app/typings/ng2_test.d.ts",
         "./tsd_typings/jasmine/jasmine.d.ts",
