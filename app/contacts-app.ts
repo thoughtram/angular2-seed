@@ -6,7 +6,6 @@ import {ContactsListComponent} from './components/contacts-list/contacts-list-co
 })
 @View({
   templateUrl: './contacts-app.html',
-  styleUrls: ['./contacts-app.css'],
   directives: [ContactsListComponent]
 })
 class ContactsApp {}
