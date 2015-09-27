@@ -1,7 +1,9 @@
 <ul class="collection">
-  <li class="collection-item" *ng-for="#contact of contacts">
-    <p>{{contact.firstname}} {{contact.lastname}}</p>
-    <p>{{contact.street}}</p>
-    <p>{{contact.zip}} {{contact.city}}</p>
+  <li class="collection-item avatar" *ng-for="#contact of contacts">
+    <img [src]="contact.image" alt="" class="circle">
+      <span class="title">{{contact.firstname}} {{contact.lastname}}</span>
+      <p>{{contact.street}}<br>
+        {{contact.zip}} {{contact.city}}
+      </p>
   </li>
 </ul>
