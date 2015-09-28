@@ -1,5 +1,6 @@
 import {Component, View, bootstrap} from 'angular2/angular2';
 import {ContactsListComponent} from './components/contacts-list/contacts-list-component'
+import {ContactsService} from './common/contacts-service';
 
 @Component({
   selector: 'contacts-app',
@@ -10,4 +11,4 @@ import {ContactsListComponent} from './components/contacts-list/contacts-list-co
 })
 class ContactsApp {}
 
-bootstrap(ContactsApp);
+bootstrap(ContactsApp, [ContactsService]);

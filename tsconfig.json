@@ -12,6 +12,7 @@
         "sourceMap": true
     },
     "files": [
+        "./app/common/contacts-service.ts",
         "./app/components/contacts-list/contacts-list-component.ts",
         "./app/contacts-app.ts",
         "./app/init.ts",
