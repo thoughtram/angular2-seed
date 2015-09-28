@@ -1,4 +1,4 @@
-import {Component, View, bootstrap, CORE_DIRECTIVES} from 'angular2/angular2';
+import {Component, EventEmitter, View, bootstrap, CORE_DIRECTIVES} from 'angular2/angular2';
 
 @Component({
   selector: 'contact-detail-component',
@@ -9,4 +9,7 @@ import {Component, View, bootstrap, CORE_DIRECTIVES} from 'angular2/angular2';
   directives: [CORE_DIRECTIVES]
 })
 export class ContactDetailComponent {
+  goBack () {
+    window.history.back();
+  }
 }

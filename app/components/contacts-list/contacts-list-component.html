@@ -2,8 +2,5 @@
   <li (click)="onContactOpened(contact)" class="collection-item avatar" *ng-for="#contact of data">
     <img [src]="contact.image" alt="" class="circle">
       <span class="title">{{contact.firstname}} {{contact.lastname}}</span>
-      <p>{{contact.street}}<br>
-        {{contact.zip}} {{contact.city}}
-      </p>
   </li>
 </ul>

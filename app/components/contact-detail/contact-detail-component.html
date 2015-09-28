@@ -1,13 +1,22 @@
-<div>
-  <span>Firstname:</span>
-  <span>{{data.firstname}}</span>
-  <br>
-  <span>Lastname:</span>
-  <span>{{data.lastname}}</span>
-  <br>
-  <span>Street:</span>
-  <span>{{data.street}}</span>
-  <br>
-  <span>Zipcode:</span>
-  <span>{{data.zip}}</span>
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card">
+      <div class="card-content grey-text text-darken-4">
+        <span class="card-title grey-text text-darken-4">{{data.firstname}} {{data.lastname}}</span>
+        <p>
+          <span>Street:</span>
+          <span>{{data.street}}</span>
+          <br>
+          <span>Zipcode:</span>
+          <span>{{data.zip}}</span>
+          <br>
+          <span>City:</span>
+          <span>{{data.city}}</span>
+        </p>
+      </div>
+      <div class="card-action">
+        <button (click)="goBack()">Go Back</button>
+      </div>
+    </div>
+  </div>
 </div>
