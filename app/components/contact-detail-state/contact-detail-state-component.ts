@@ -12,7 +12,6 @@ import {RouteParams} from 'angular2/router';
     <contact-detail-component
       [data]="contact">
     </contact-detail-component>`,
-  //template: `<h1>FOO</h1>`,
   directives: [CORE_DIRECTIVES, ContactDetailComponent]
 })
 export class ContactDetailStateComponent {
