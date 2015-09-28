@@ -1,14 +1,23 @@
 import {Component, View, bootstrap} from 'angular2/angular2';
-import {ContactsListComponent} from './components/contacts-list/contacts-list-component'
+import {ContactsListStateComponent} from './components/contacts-list-state/contacts-list-state-component'
+import {ContactDetailStateComponent} from './components/contact-detail-state/contact-detail-state-component'
+
 import {ContactsService} from './common/contacts-service';
+
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_BINDINGS} from 'angular2/router';
 
 @Component({
   selector: 'contacts-app',
 })
 @View({
-  templateUrl: './contacts-app.html',
-  directives: [ContactsListComponent]
+  template: '<router-outlet></router-outlet>',
+  directives: [ROUTER_DIRECTIVES]
 })
-class ContactsApp {}
+@RouteConfig([
+  { path: '/', component: ContactsListStateComponent },
+  { path: '/contact/:id', component: ContactDetailStateComponent }
+])
+class ContactsApp {
+}
 
-bootstrap(ContactsApp, [ContactsService]);
+bootstrap(ContactsApp, [ROUTER_BINDINGS, ContactsService]);
