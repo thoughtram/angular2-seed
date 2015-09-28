@@ -2,14 +2,22 @@ import {Component, EventEmitter, View, bootstrap, CORE_DIRECTIVES} from 'angular
 
 @Component({
   selector: 'contact-detail-component',
-  properties: ['data']
+  properties: ['data'],
+  events: ['backClicked', 'editClicked']
 })
 @View({
   templateUrl: './components/contact-detail/contact-detail-component.html',
   directives: [CORE_DIRECTIVES]
 })
 export class ContactDetailComponent {
+  editClicked = new EventEmitter();
+  backClicked = new EventEmitter();
+
   goBack () {
-    window.history.back();
+    this.backClicked.next(null);
+  }
+
+  edit (contact) {
+    this.editClicked.next(contact);
   }
 }

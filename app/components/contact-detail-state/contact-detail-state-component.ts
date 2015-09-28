@@ -2,7 +2,7 @@ import {Component, View, bootstrap, CORE_DIRECTIVES} from 'angular2/angular2';
 import {Contact} from '../../models/contact';
 import {ContactsService} from '../../common/contacts-service';
 import {ContactDetailComponent} from '../contact-detail/contact-detail-component';
-import {RouteParams} from 'angular2/router';
+import {RouteParams, Router} from 'angular2/router';
 
 @Component({
   selector: 'contact-detail-state-component'
@@ -10,13 +10,25 @@ import {RouteParams} from 'angular2/router';
 @View({
   template: `
     <contact-detail-component
-      [data]="contact">
+      [data]="contact"
+      (edit-clicked)="onEditClicked($event)"
+      (back-clicked)="onBackClicked()">
     </contact-detail-component>`,
   directives: [CORE_DIRECTIVES, ContactDetailComponent]
 })
 export class ContactDetailStateComponent {
   contact:Contact;
-  constructor (contactsService: ContactsService, params:RouteParams) {
+  router: Router;
+  constructor (contactsService: ContactsService, router: Router, params:RouteParams) {
     this.contact = contactsService.getContact(params.get('id'));
+    this.router = router;
+  }
+
+  onBackClicked () {
+    this.router.navigate('/');
+  }
+
+  onEditClicked (contact) {
+    this.router.navigate('/contact/' + contact.id + '/edit');
   }
 }
