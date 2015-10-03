@@ -1,11 +1,18 @@
-import {Component, EventEmitter, View, bootstrap, CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/angular2';
+import {
+  Component,
+  EventEmitter,
+  View,
+  bootstrap,
+  CORE_DIRECTIVES,
+  FORM_DIRECTIVES,
+  Input,
+  Output
+} from 'angular2/angular2';
 import {CloneService} from '../../common/clone-service';
 import {Contact} from '../../models/contact';
 
 @Component({
   selector: 'contact-editor-component',
-  properties: ['data'],
-  events: ['canceled', 'saved'],
   bindings: [CloneService]
 })
 @View({
@@ -13,8 +20,9 @@ import {Contact} from '../../models/contact';
   directives: [CORE_DIRECTIVES, FORM_DIRECTIVES]
 })
 export class ContactEditorComponent {
-  canceled = new EventEmitter();
-  saved = new EventEmitter();
+  @Input() data:Contact;
+  @Output() canceled = new EventEmitter();
+  @Output() saved = new EventEmitter();
 
   constructor (private cloneService: CloneService<Contact>) {
 
