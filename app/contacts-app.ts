@@ -10,7 +10,14 @@ import {RouteConfig, ROUTER_PRIMARY_COMPONENT, ROUTER_DIRECTIVES, ROUTER_BINDING
   selector: 'contacts-app',
 })
 @View({
-  template: '<router-outlet></router-outlet>',
+  template: `
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Contacts</a>
+      </div>
+    </nav>
+    <router-outlet></router-outlet>
+    `,
   directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
