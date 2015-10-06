@@ -1,23 +1,17 @@
-import {
-  Component,
-  EventEmitter,
-  View,
-  bootstrap,
-  CORE_DIRECTIVES,
-  Input,
-  Output
-} from 'angular2/angular2';
+import {Component, EventEmitter, View, bootstrap, CORE_DIRECTIVES} from 'angular2/angular2';
 import {Contact} from '../../models/contact';
 
-@Component({selector: 'contacts-list-component'})
+@Component({
+  selector: 'contacts-list-component',
+  events: ['contactOpened'],
+  properties: ['data']
+})
 @View({
   templateUrl: './components/contacts-list/contacts-list-component.html',
   directives: [CORE_DIRECTIVES]
 })
 export class ContactsListComponent {
-  @Input() data:Contact[];
-  @Output() contactOpened = new EventEmitter();
-
+  contactOpened = new EventEmitter();
   onContactOpened (contact: Contact) {
     this.contactOpened.next(contact)
   }
