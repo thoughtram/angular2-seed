@@ -1,4 +1,4 @@
-import {Component, View, CORE_DIRECTIVES} from 'angular2/angular2';
+import {Component, View, bootstrap, CORE_DIRECTIVES} from 'angular2/angular2';
 import {Contact} from '../../models/contact';
 import {ContactsService} from '../../common/contacts-service';
 import {ContactEditorComponent} from '../contact-editor/contact-editor-component';

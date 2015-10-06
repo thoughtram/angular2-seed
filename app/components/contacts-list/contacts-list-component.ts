@@ -2,6 +2,7 @@ import {
   Component,
   EventEmitter,
   View,
+  bootstrap,
   CORE_DIRECTIVES,
   Input,
   Output
