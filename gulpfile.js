@@ -61,6 +61,7 @@ var PATH = {
   },
   src: {
     all: APP_SRC,
+    images: './images',
     lib: [
       // Order is quite important here for the HTML tag injection.
       './node_modules/angular2/node_modules/traceur/bin/traceur-runtime.js',
@@ -139,6 +140,11 @@ gulp.task('build.assets.dev', ['build.js.dev'], function () {
     .pipe(gulp.dest(PATH.dest.dev.all));
 });
 
+gulp.task('build.images.dev', ['build.js.dev'], function () {
+  return gulp.src(join(PATH.src.images, '*'))
+    .pipe(gulp.dest(join(PATH.dest.dev.all, 'images')));
+});
+
 gulp.task('build.index.dev', function () {
   var target = gulp.src(injectableDevAssetsRef(), { read: false });
   return gulp.src(join(PATH.src.all, 'index.html'))
@@ -148,7 +154,7 @@ gulp.task('build.index.dev', function () {
 });
 
 gulp.task('build.app.dev', function (done) {
-  runSequence('clean.app.dev', 'build.assets.dev', 'build.index.dev', done);
+  runSequence('clean.app.dev', 'build.assets.dev', 'build.images.dev', 'build.index.dev', done);
 });
 
 gulp.task('build.dev', function (done) {
