@@ -6,14 +6,18 @@
         <span class="card-title">{{data.firstname}} {{data.lastname}}</span>
       </div>
       <div class="card-content grey-text text-darken-4">
-          <span>Street:</span>
-          <span>{{data.street}}</span>
-          <br>
-          <span>Zipcode:</span>
-          <span>{{data.zip}}</span>
-          <br>
-          <span>City:</span>
-          <span>{{data.city}}</span>
+        <div class="row">
+          <span class="col s6">Street:</span>
+          <span class="col s6">{{data.street}}</span>
+        </div>
+        <div class="row">
+          <span class="col s6">Zipcode:</span>
+          <span class="col s6">{{data.zip}}</span>
+        </div>
+        <div class="row">
+          <span class="col s6">City:</span>
+          <span class="col s6">{{data.city}}</span>
+        </div>
       </div>
       <div class="card-action">
         <button class="btn" (click)="goBack()">Go Back</button>
