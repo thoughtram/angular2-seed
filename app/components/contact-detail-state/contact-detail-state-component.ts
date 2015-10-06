@@ -25,10 +25,10 @@ export class ContactDetailStateComponent {
   }
 
   onBackClicked () {
-    this.router.navigateByUrl('/');
+    this.router.navigate('/');
   }
 
   onEditClicked (contact) {
-    this.router.navigateByUrl('/contact/' + contact.id + '/edit');
+    this.router.navigate('/contact/' + contact.id + '/edit');
   }
 }
