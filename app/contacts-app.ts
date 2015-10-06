@@ -11,11 +11,13 @@ import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_BINDINGS} from 'angular2/router';
 })
 @View({
   template: `
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Contacts</a>
-      </div>
-    </nav>
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo center">Contacts</a>
+        </div>
+      </nav>
+    </div>
     <router-outlet></router-outlet>
     `,
   directives: [ROUTER_DIRECTIVES]

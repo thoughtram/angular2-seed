@@ -1,9 +1,11 @@
 <div class="row">
-  <div class="col s12 m6">
+  <div class="col s12 m7">
     <div class="card">
+      <div class="card-image">
+        <img [src]="data.image">
+        <span class="card-title">{{data.firstname}} {{data.lastname}}</span>
+      </div>
       <div class="card-content grey-text text-darken-4">
-        <span class="card-title grey-text text-darken-4">{{data.firstname}} {{data.lastname}}</span>
-        <p>
           <span>Street:</span>
           <span>{{data.street}}</span>
           <br>
@@ -12,11 +14,10 @@
           <br>
           <span>City:</span>
           <span>{{data.city}}</span>
-        </p>
       </div>
       <div class="card-action">
-        <button (click)="goBack()">Go Back</button>
-        <button (click)="edit(data)">Edit</button>
+        <button class="btn" (click)="goBack()">Go Back</button>
+        <button class="btn" (click)="edit(data)">Edit</button>
       </div>
     </div>
   </div>
